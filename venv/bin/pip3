@@ -1,4 +1,6 @@
-#!/home/ferfong/Git/Ing-Software-2024-2/venv/bin/python
+#!/bin/sh
+'''exec' "/Users/arturo/OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO/Escuela/Universidad/Semestres/6-Sexto/Ingeniería de Software/Ing-Software-2024-2/venv/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
