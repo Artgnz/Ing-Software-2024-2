@@ -2,6 +2,17 @@ from alchemyClasses.Renta import Renta
 from alchemyClasses import db
 from datetime import datetime
 
+
+def crear_renta(idUsuario:int, idPelicula:int, fecha_renta:datetime, dias_de_renta:int):
+    try:
+        renta = Renta(idUsuario, idPelicula, fecha_renta, dias_de_renta)
+
+        db.session.add(renta)
+        db.session.commit()
+        return renta
+    except(Exception) as e:
+        return None
+
 def obtener_rentas():
     return Renta.query.all()
 

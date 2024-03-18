@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar renta</title>
+</head>
+<body>
+    <h1>Agregar renta</h1>
+    <form action="{{ url_for('renta.agregar_renta_bp') }}" method="POST">
+    <label for="idUsuario">Ingrese el id de usuario:</label>
+    <input type="number" name="idUsuario" id="idUsuario"/>
+    <br>
+    <label for="idPelicula">Ingrese el id de la película:</label>
+    <input type="number" name="idPelicula" id="idPelicula"/>
+    <br>
+    <label for="fecha_renta">Ingrese la fecha de la renta:</label>
+    <input type="date" name="fecha_renta" id="fecha_renta"/>
+    <br>
+    <label for="dias_de_renta">Ingrese los días de renta:</label>
+    <input type="number" name="dias_de_renta" id="dias_de_renta"/>
+    <br>
+    <button>Agregar renta</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('renta.ver_rentas_bp') }}">Volver</a>
+</body>
+</html>
