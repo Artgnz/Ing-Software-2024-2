@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ver rentas</title>
+    <style>
+        .renta_vencida {
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <h1>A continuación se muestran las las rentas:</h1>
+
+    <ul>
+    {% for renta in rentas %}
+        {% set dias_transcurridos = (hoy - renta.fecha_renta).days %}
+          <li {% if dias_transcurridos > renta.dias_de_renta %}class="renta_vencida"{% endif %}>
+            <pre>{{ renta }}</pre>
+          </li>
+{#        <form action="{{ url_for('pelicula.eliminar_pelicula_bp', idPelicula=pelicula.idPelicula) }}" method="post">#}
+{#            <input type="hidden" name="idPelicula" value="{{ pelicula.idPelicula }}">#}
+{#            <button type="submit">Eliminar</button>#}
+{#        </form>#}
+{#        <form action="{{ url_for('pelicula.actualizar_pelicula_bp', idPelicula=pelicula.idPelicula) }}" method="get">#}
+{#            <input type="hidden" name="idPelicula" value="{{ pelicula.idPelicula }}">#}
+{#            <button type="submit">Actualizar</button>#}
+{#        </form>#}
+      </li>
+      {% endfor %}
+    </ul>
+    <form action="{{ url_for('renta.agregar_renta_bp') }}" method="get">
+        <button type="submit">Agregar renta</button>
+    </form>
+  </body>
+</html>
