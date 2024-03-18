@@ -25,33 +25,11 @@ def agregar_pelicula_bp():
     flash('Película agregada correctamente', 'success')
     return redirect(url_for('pelicula.ver_peliculas_bp'))
 
-# @usuario_blueprint.route('/eliminar<int:idUsuario>', methods=['POST'])
-# def eliminar_usuario_bp(idUsuario):
-#     eliminado = eliminar_usuario(idUsuario)
-#     if eliminado:
-#         flash('Se eliminó con éxito al usuario', 'success')
-#     else:
-#         flash('Hubo un error al eliminar el usuario', 'error')
-#     return redirect(url_for('usuario.ver_usuarios'))
-
-# @usuario_blueprint.route('/actualizar/<int:idUsuario>', methods=['GET','POST'])
-# def actualizar_usuario_bp(idUsuario):
-#     usuario = obtener_usuario_por_id(idUsuario)
-#     if not usuario:
-#         flash('No se encontró el usuario', 'error')
-#         return redirect(url_for('usuario.ver_usuarios'))  # Corrected redirection
-
-#     if request.method == 'POST':
-#         nombre = request.form.get('nombre')
-#         apPat = request.form.get('apPat')
-#         apMat = request.form.get('apMat')
-#         password = request.form.get('password')
-#         email = request.form.get('email')
-#         if not all([nombre, apPat, apMat, password, email]):
-#             flash('Llene todos los campos para agregar', 'error')
-#             return render_template('actualizar_usuario.html', usuario=usuario)
-#         actualizar_usuario_por_id(idUsuario, nombre, apPat, apMat, password, email)
-#         flash('Datos de usuario actualizados correctamente', 'success')
-#         return redirect(url_for('usuario.ver_usuarios'))
-
-#     return render_template('actualizar_usuario.html', usuario=usuario)
+@pelicula_blueprint.route('/eliminar<int:idPelicula>', methods=['POST'])
+def eliminar_pelicula_bp(idPelicula):
+    eliminado = eliminar_pelicula(idPelicula)
+    if eliminado:
+        flash('Se eliminó con éxito a la película', 'success')
+    else:
+        flash('Hubo un error al eliminar la película', 'error')
+    return redirect(url_for('pelicula.ver_peliculas_bp'))
