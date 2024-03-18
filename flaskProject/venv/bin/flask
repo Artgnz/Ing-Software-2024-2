@@ -1,4 +1,4 @@
-#!/home/ferfong/Git/Ing-Software-2024-2/flaskProject/venv/bin/python
+#!/Users/arturo/Downloads/Ing-Software-2024-2/flaskProject/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
