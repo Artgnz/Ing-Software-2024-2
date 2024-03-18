@@ -20,14 +20,14 @@
       {% for pelicula in peliculas %}
       <li>
         <pre>{{ pelicula }}</pre>
-{#        <form action="{{ url_for('usuario.eliminar_usuario_bp', idUsuario=usuario.idUsuario) }}" method="post">
-            <input type="hidden" name="user_id" value="{{ usuario.id }}">
+        <form action="{{ url_for('pelicula.eliminar_pelicula_bp', idPelicula=pelicula.idPelicula) }}" method="post">
+            <input type="hidden" name="idPelicula" value="{{ pelicula.idPelicula }}">
             <button type="submit">Eliminar</button>
         </form>
-        <form action="{{ url_for('usuario.actualizar_usuario_bp', idUsuario=usuario.idUsuario) }}" method="get">
-            <input type="hidden" name="user_id" value="{{ usuario.id }}">
+        <form action="{{ url_for('pelicula.actualizar_pelicula_bp', idPelicula=pelicula.idPelicula) }}" method="get">
+            <input type="hidden" name="idPelicula" value="{{ pelicula.idPelicula }}">
             <button type="submit">Actualizar</button>
-        </form>#}
+        </form>
       </li>
       {% endfor %}
     </ul>

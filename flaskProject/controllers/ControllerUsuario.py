@@ -34,29 +34,24 @@ def eliminar_usuario_bp(idUsuario):
         flash('Hubo un error al eliminar el usuario', 'error')
     return redirect(url_for('usuario.ver_usuarios'))
 
-# def agregar_alumno():
-#     if request.method == 'GET':
-#         return render_template('agregar_usuario.html')
-#     else:
-#         #Obtengo la información del método post.
-#         name = request.form['name']
-#         ap_pat = request.form['ap_pat']
-#         ap_mat = request.form['ap_mat']
-#         num_cta = request.form['num_cta']
-#         passwd = request.form['passwd']
-#         #Creo mi usuario.
-#         #alumno = Alumno(name, ap....)
-#         #Lo guardo en la DB
-#         #url_for
-#         #flash
-#         if v == 1:
-#             flash("Hello from flash!")
-#             return url_for('alumno.agregar_alumno')
-#         # Y regreso al flujo que me hayan especificado.
-#         return render_template('user_added.html', name=name, num_cta=num_cta)
+@usuario_blueprint.route('/actualizar/<int:idUsuario>', methods=['GET','POST'])
+def actualizar_usuario_bp(idUsuario):
+    usuario = obtener_usuario_por_id(idUsuario)
+    if not usuario:
+        flash('No se encontró el usuario', 'error')
+        return redirect(url_for('usuario.ver_usuarios'))
 
+    if request.method == 'POST':
+        nombre = request.form.get('nombre')
+        apPat = request.form.get('apPat')
+        apMat = request.form.get('apMat')
+        password = request.form.get('password')
+        email = request.form.get('email')
+        if not all([nombre, apPat, apMat, password, email]):
+            flash('Llene todos los campos para actualizar', 'error')
+            return render_template('actualizar_usuario.html', usuario=usuario)
+        actualizar_usuario_por_id(idUsuario, nombre, apPat, apMat, password, email)
+        flash('Datos de usuario actualizados correctamente', 'success')
+        return redirect(url_for('usuario.ver_usuarios'))
 
-# #responde a localhost:5000/alumno/id/1
-# @alumno_blueprint.route('/id/<int:id_alumno>/<string:nombre>') #<tipo:nombre_variable>
-# def ver_alumno_id(id_alumno, nombre):
-#     return f"Se hace el query con el id {id_alumno} y el nombre {nombre}"
+    return render_template('actualizar_usuario.html', usuario=usuario)

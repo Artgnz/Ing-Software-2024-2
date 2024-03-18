@@ -33,3 +33,24 @@ def eliminar_pelicula_bp(idPelicula):
     else:
         flash('Hubo un error al eliminar la película', 'error')
     return redirect(url_for('pelicula.ver_peliculas_bp'))
+
+@pelicula_blueprint.route('/actualizar/<int:idPelicula>', methods=['GET','POST'])
+def actualizar_pelicula_bp(idPelicula):
+    pelicula = obtener_pelicula_por_id(idPelicula)
+    if not pelicula:
+        flash('No se encontró la película', 'error')
+        return redirect(url_for('usuario.ver_usuarios'))
+
+    if request.method == 'POST':
+        nombre = request.form.get('nombre')
+        genero = request.form.get('genero')
+        duracion = request.form.get('duracion')
+        inventario = request.form.get('inventario')
+        if not all([nombre, genero, duracion, inventario]):
+            flash('Llene todos los campos para actualizar', 'error')
+            return render_template('actualizar_pelicula.html', pelicula=pelicula)
+        actualizar_pelicula_por_id(idPelicula=idPelicula, nombre=nombre, genero=genero, duracion=duracion, inventario=inventario)
+        flash('Datos de usuario actualizados correctamente', 'success')
+        return redirect(url_for('pelicula.ver_peliculas_bp'))
+
+    return render_template('actualizar_pelicula.html', pelicula=pelicula)

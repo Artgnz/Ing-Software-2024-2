@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar usuario</title>
+</head>
+<body>
+
+    <h1>Actualizar datos de pelicula</h1>
+    <form action="{{ url_for('pelicula.actualizar_pelicula_bp', idPelicula=pelicula.idPelicula) }}" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="{{ pelicula.nombre }}"/>
+    <br>
+    <label for="genero">Genero:</label>
+    <input type="text" name="genero" id="genero" value="{{ pelicula.genero }}"/>
+    <br>
+    <label for="duracion">Duración en minutos:</label>
+    <input type="number" name="duracion" id="duracion" value="{{ pelicula.duracion }}"/>
+    <br>
+    <label for="inventario">Inventario:</label>
+    <input type="number" name="inventario" id="inventario" value="{{ pelicula.inventario }}"/>
+    <br>
+    <button>Actualizar datos</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('pelicula.ver_peliculas_bp') }}">Volver</a>
+</body>
+</html>
