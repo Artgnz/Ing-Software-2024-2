@@ -25,9 +25,14 @@ def agregar_usuario():
     flash('Usuario creado correctamente', 'success')
     return redirect(url_for('usuario.ver_usuarios'))
 
-@usuario_blueprint.route('/eliminar', methods=['GET', 'POST'])
-def eliminar_usuario():
-    return None
+@usuario_blueprint.route('/eliminar<int:idUsuario>', methods=['POST'])
+def eliminar_usuario_bp(idUsuario):
+    eliminado = eliminar_usuario(idUsuario)
+    if eliminado:
+        flash('Se eliminó con éxito al usuario', 'success')
+    else:
+        flash('Hubo un error al eliminar el usuario', 'error')
+    return redirect(url_for('usuario.ver_usuarios'))
 
 # def agregar_alumno():
 #     if request.method == 'GET':
