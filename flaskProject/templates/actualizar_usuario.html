@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar usuario</title>
+</head>
+<body>
+
+    <h1>Actualizar datos de usuario</h1>
+    <form action="{{ url_for('usuario.actualizar_usuario_bp', idUsuario=usuario.idUsuario) }}" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="{{ usuario.nombre }}"/>
+    <br>
+    <label for="apPat">Apellido paterno:</label>
+    <input type="text" name="apPat" id="apPat" value="{{ usuario.apPat }}"/>
+    <br>
+    <label for="apMat">Apellido materno:</label>
+    <input type="text" name="apMat" id="apMat" value="{{ usuario.apMat }}"/>
+    <br>
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password" id="password" value="{{ usuario.password }}"/>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" value="{{ usuario.email }}"/>
+    <br>
+    <button>Actualizar datos</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('usuario.ver_usuarios') }}">Volver</a>
+</body>
+</html>

@@ -14,6 +14,9 @@ class Renta(db.Model):
     dias_de_renta = Column(Integer, nullable=True, default=4)
     estatus = Column(Boolean, nullable=True, default=0)
 
+    pelicula = relationship('Pelicula', backref='rentas')
+    usuario = relationship('Usuario', backref='rentas')
+
     def __init__(self, id_usuario, id_pelicula, fecha_renta, dias_de_renta=5, estatus=0):
         self.idUsuario = id_usuario
         self.idPelicula = id_pelicula

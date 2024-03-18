@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 
 from alchemyClasses import db
-
+# from alchemyClasses import Renta
 class Pelicula(db.Model):
 
     __tablename__ = 'peliculas'
@@ -10,7 +10,6 @@ class Pelicula(db.Model):
     genero = Column(String(45), nullable=True)
     duracion = Column(Integer, nullable=True)
     inventario = Column(Integer)
-    renta = db.relationship("Renta", cascade="all, delete-orphan")
 
     def __init__(self, nombre, genero=None, duracion=None, inventario=1):
         self.nombre = nombre
