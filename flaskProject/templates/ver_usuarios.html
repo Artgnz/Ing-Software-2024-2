@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ver usuarios</title>
+  </head>
+  <body>
+    <h1>A continuación se muestran los usuarios:</h1>
+
+    <ul>
+      {% for usuario in usuarios %}
+      <li>
+        <pre>{{ usuario }}</pre>
+        <form action="/delete_user" method="post">
+            <input type="hidden" name="user_id" value="{{ usuario.id }}">
+            <button type="submit">Eliminar</button>
+        </form>
+        <form action="/update_user" method="post">
+            <input type="hidden" name="user_id" value="{{ usuario.id }}">
+            <button type="submit">Actualizar</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+    <form action="{{ url_for('usuario.agregar_usuario') }}" method="get">
+        <button type="submit">Agregar usuario</button>
+    </form>
+  </body>
+</html>

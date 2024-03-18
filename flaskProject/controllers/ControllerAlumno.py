@@ -1,6 +1,4 @@
-from flask import Blueprint, request, render_template, flash, url_for
-from random import randint
-
+from flask import Blueprint, request, render_template, flash, url_for, redirect
 alumno_blueprint = Blueprint('alumno', __name__, url_prefix='/alumno')
 
 @alumno_blueprint.route('/') #localhost:5000/alumno/
@@ -16,7 +14,7 @@ def ver_alumno_id(id_alumno, nombre):
 @alumno_blueprint.route('/agregar', methods=['GET', 'POST'])
 def agregar_alumno():
     if request.method == 'GET':
-        return render_template('add_user.html')
+        return render_template('agregar_usuario.html')
     else:
         #Obtengo la información del método post.
         name = request.form['name']
