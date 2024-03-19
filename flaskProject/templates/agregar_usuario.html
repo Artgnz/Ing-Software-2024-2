@@ -8,19 +8,19 @@
     <h1>Crear un usuario</h1>
     <form action="{{ url_for('usuario.agregar_usuario') }}" method="POST">
     <label for="nombre">Ingrese el nombre:</label>
-    <input type="text" name="nombre" id="nombre"/>
+    <input type="text" name="nombre" id="nombre" required/>
     <br>
     <label for="apPat">Ingrese el apellido paterno:</label>
-    <input type="text" name="apPat" id="apPat"/>
+    <input type="text" name="apPat" id="apPat" required/>
     <br>
     <label for="apMat">Ingrese el apellido materno:</label>
-    <input type="text" name="apMat" id="apMat"/>
+    <input type="text" name="apMat" id="apMat" required/>
     <br>
     <label for="password">Ingrese el password:</label>
-    <input type="password" name="password" id="password"/>
+    <input type="password" name="password" id="password" required/>
     <br>
     <label for="email">Ingrese el email:</label>
-    <input type="email" name="email" id="email"/>
+    <input type="email" name="email" id="email" required/>
     <br>
     <button>Crear usuario</button>
     </form>

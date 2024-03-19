@@ -39,7 +39,7 @@ def actualizar_pelicula_bp(idPelicula):
     pelicula = obtener_pelicula_por_id(idPelicula)
     if not pelicula:
         flash('No se encontró la película', 'error')
-        return redirect(url_for('usuario.ver_usuarios'))
+        return redirect(url_for('pelicula.ver_peliculas_bp'))
 
     if request.method == 'POST':
         nombre = request.form.get('nombre')
@@ -50,7 +50,7 @@ def actualizar_pelicula_bp(idPelicula):
             flash('Llene todos los campos para actualizar', 'error')
             return render_template('actualizar_pelicula.html', pelicula=pelicula)
         actualizar_pelicula_por_id(idPelicula=idPelicula, nombre=nombre, genero=genero, duracion=duracion, inventario=inventario)
-        flash('Datos de usuario actualizados correctamente', 'success')
+        flash('Datos de pelicula actualizados correctamente', 'success')
         return redirect(url_for('pelicula.ver_peliculas_bp'))
 
     return render_template('actualizar_pelicula.html', pelicula=pelicula)

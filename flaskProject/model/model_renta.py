@@ -13,6 +13,15 @@ def crear_renta(idUsuario:int, idPelicula:int, fecha_renta:datetime, dias_de_ren
     except(Exception) as e:
         return None
 
+def actualizar_estatus_renta(idRentar:int, estatus:bool):
+    renta = obtener_renta_por_id(idRentar)
+    if not renta:
+        return False
+    renta.estatus = estatus
+    db.session.commit()
+    return True
+
+
 def obtener_rentas():
     return Renta.query.all()
 

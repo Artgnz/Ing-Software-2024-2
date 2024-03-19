@@ -27,3 +27,19 @@ def agregar_renta_bp():
         return redirect(url_for('renta.agregar_renta_bp'))
     flash('Renta agregada correctamente', 'success')
     return redirect(url_for('renta.ver_rentas_bp'))
+
+@renta_blueprint.route('/actualizar/<int:idRentar>', methods=['GET','POST'])
+def actualizar_renta_bp(idRentar):
+    renta = obtener_renta_por_id(idRentar)
+    if not renta:
+        flash('No se encontró la renta', 'error')
+        return redirect(url_for('renta.ver_rentas_bp'))
+
+    if request.method == 'POST':
+        estatus = request.form.get('estatus') == 'True'
+        print(request.form.get('estatus'))
+        actualizar_estatus_renta(idRentar, estatus)
+        flash('Datos de pelicula actualizados correctamente', 'success')
+        return redirect(url_for('renta.ver_rentas_bp'))
+
+    return render_template('actualizar_renta.html', renta=renta)

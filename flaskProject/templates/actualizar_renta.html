@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar renta</title>
+</head>
+<body>
+
+    <h1>Actualizar datos de renta</h1>
+    <form action="{{ url_for('renta.actualizar_renta_bp', idRentar=renta.idRentar) }}" method="POST">
+    <label for="idUsuario">ID del usuario:</label>
+    <input type="number" name="idUsuario" id="idUsuario" value="{{ renta.idUsuario }}" required readonly/>
+    <br>
+    <label for="idPelicula">ID de la película:</label>
+    <input type="number" name="idPelicula" id="idPelicula" value="{{ renta.idPelicula }}" required readonly/>
+    <br>
+    <label for="fecha_renta">Fecha de la renta:</label>
+    <input type="date" name="fecha_renta" id="fecha_renta" value="{{ renta.fecha_renta }}" required readonly/>
+    <br>
+    <label for="dias_de_renta">Días de renta:</label>
+    <input type="number" name="dias_de_renta" id="dias_de_renta" value="{{ renta.dias_de_renta }}" required readonly/>
+    <br>
+    <label for="estatus">Estatus:</label>
+    <input type="checkbox" name="estatus" id="estatus" value="True" {% if renta.estatus %}checked{% endif %}"/>
+    <br>
+    <button>Actualizar datos</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <a href="{{ url_for('renta.ver_rentas_bp') }}">Volver</a>
+</body>
+</html>

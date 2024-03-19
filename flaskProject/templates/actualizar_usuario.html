@@ -9,19 +9,19 @@
     <h1>Actualizar datos de usuario</h1>
     <form action="{{ url_for('usuario.actualizar_usuario_bp', idUsuario=usuario.idUsuario) }}" method="POST">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" value="{{ usuario.nombre }}"/>
+    <input type="text" name="nombre" id="nombre" value="{{ usuario.nombre }}" required/>
     <br>
     <label for="apPat">Apellido paterno:</label>
-    <input type="text" name="apPat" id="apPat" value="{{ usuario.apPat }}"/>
+    <input type="text" name="apPat" id="apPat" value="{{ usuario.apPat }}" required/>
     <br>
     <label for="apMat">Apellido materno:</label>
-    <input type="text" name="apMat" id="apMat" value="{{ usuario.apMat }}"/>
+    <input type="text" name="apMat" id="apMat" value="{{ usuario.apMat }}" required/>
     <br>
     <label for="password">Contraseña:</label>
-    <input type="password" name="password" id="password" value="{{ usuario.password }}"/>
+    <input type="password" name="password" id="password" value="{{ usuario.password }}" required/>
     <br>
     <label for="email">Email:</label>
-    <input type="email" name="email" id="email" value="{{ usuario.email }}"/>
+    <input type="email" name="email" id="email" value="{{ usuario.email }}" required/>
     <br>
     <button>Actualizar datos</button>
     </form>

@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Actualizar usuario</title>
+    <title>Actualizar película</title>
 </head>
 <body>
 
     <h1>Actualizar datos de pelicula</h1>
     <form action="{{ url_for('pelicula.actualizar_pelicula_bp', idPelicula=pelicula.idPelicula) }}" method="POST">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" value="{{ pelicula.nombre }}"/>
+    <input type="text" name="nombre" id="nombre" value="{{ pelicula.nombre }}" required/>
     <br>
     <label for="genero">Genero:</label>
-    <input type="text" name="genero" id="genero" value="{{ pelicula.genero }}"/>
+    <input type="text" name="genero" id="genero" value="{{ pelicula.genero }}" required/>
     <br>
     <label for="duracion">Duración en minutos:</label>
-    <input type="number" name="duracion" id="duracion" value="{{ pelicula.duracion }}"/>
+    <input type="number" name="duracion" id="duracion" value="{{ pelicula.duracion }}" required/>
     <br>
     <label for="inventario">Inventario:</label>
-    <input type="number" name="inventario" id="inventario" value="{{ pelicula.inventario }}"/>
+    <input type="number" name="inventario" id="inventario" value="{{ pelicula.inventario }}" required/>
     <br>
     <button>Actualizar datos</button>
     </form>

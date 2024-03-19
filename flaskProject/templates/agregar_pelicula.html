@@ -8,16 +8,16 @@
     <h1>Agregar pelicula</h1>
     <form action="{{ url_for('pelicula.agregar_pelicula_bp') }}" method="POST">
     <label for="nombre">Ingrese el nombre:</label>
-    <input type="text" name="nombre" id="nombre"/>
+    <input type="text" name="nombre" id="nombre" required/>
     <br>
     <label for="genero">Ingrese el genero:</label>
-    <input type="text" name="genero" id="genero"/>
+    <input type="text" name="genero" id="genero" required/>
     <br>
     <label for="duracion">Ingrese la duración en minutos:</label>
-    <input type="number" name="duracion" id="duracion"/>
+    <input type="number" name="duracion" id="duracion" required/>
     <br>
     <label for="inventario">Ingrese el inventario:</label>
-    <input type="number" name="inventario" id="inventario"/>
+    <input type="number" name="inventario" id="inventario" required/>
     <br>
     <button>Agregar película</button>
     </form>
