@@ -29,8 +29,11 @@ def eliminar_pelicula(id: int):
     pelicula = obtener_pelicula_por_id(id)
     if not pelicula:
         return False
-    db.session.delete(pelicula)
-    db.session.commit()
+    try:
+        db.session.delete(pelicula)
+        db.session.commit()
+    except:
+        return False
     return True
 
 def eliminar_todas_peliculas():

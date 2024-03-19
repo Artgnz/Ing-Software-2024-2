@@ -28,8 +28,11 @@ def eliminar_usuario(id: int):
     usuario = obtener_usuario_por_id(id)
     if not usuario:
         return False
-    db.session.delete(usuario)
-    db.session.commit()
+    try:
+        db.session.delete(usuario)
+        db.session.commit()
+    except:
+        return False
     return True
 
 def actualizar_usuario_por_id(idUsuario, nombre, apPat, apMat, password, email):
