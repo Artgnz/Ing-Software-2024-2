@@ -5,6 +5,15 @@
     <title>Index</title>
 </head>
 <body>
-    <a href="/mpb/html">Regresar</a>
+
+    <li>
+        <a href="{{ url_for('usuario.ver_usuarios') }}">Ver usuarios</a>
+    </li>
+    <li>
+        <a href="{{ url_for('renta.ver_rentas_bp') }}">Ver rentas</a>
+    </li>
+    <li>
+        <a href="{{ url_for('pelicula.ver_peliculas_bp') }}">Ver peliculas</a>
+    </li>
 </body>
 </html>

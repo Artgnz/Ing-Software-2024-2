@@ -24,7 +24,7 @@
     <ul>
     {% for renta in rentas %}
         {% set dias_transcurridos = (hoy - renta.fecha_renta).days %}
-          <li {% if dias_transcurridos > renta.dias_de_renta %}class="renta_vencida"{% endif %}>
+          <li {% if dias_transcurridos > renta.dias_de_renta and not renta.estatus%}class="renta_vencida"{% endif %}>
             <pre>{{ renta }}</pre>
           </li>
         <form action="{{ url_for('renta.actualizar_renta_bp', idRentar=renta.idRentar) }}" method="get">
@@ -37,5 +37,6 @@
     <form action="{{ url_for('renta.agregar_renta_bp') }}" method="get">
         <button type="submit">Agregar renta</button>
     </form>
+    <a href="{{ url_for('index') }}">Volver</a>
   </body>
 </html>

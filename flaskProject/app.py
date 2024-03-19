@@ -19,7 +19,7 @@ app.register_blueprint(renta_blueprint)
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def index():  # put application's code here
     return render_template('index.html')
 
 
