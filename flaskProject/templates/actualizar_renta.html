@@ -21,8 +21,11 @@
     <input type="number" name="dias_de_renta" id="dias_de_renta" value="{{ renta.dias_de_renta }}" required readonly/>
     <br>
     <label for="estatus">Estatus:</label>
-    <input type="checkbox" name="estatus" id="estatus" value="True" {% if renta.estatus %}checked{% endif %}"/>
-    <br>
+        <select name="estatus" id="estatus">
+            <option value="True">Entregado</option>
+            <option value="False">No entregado</option>
+        </select>
+        <br>
     <button>Actualizar datos</button>
     </form>
     {% with messages = get_flashed_messages(with_categories=true) %}
