@@ -12,6 +12,7 @@ import NuevaPelicula from "./components/NuevaPelicula/NuevaPelicula";
 import ActualizarPelicula from "./components/ActualizarPelicula/ActualizarPelicula";
 import Rentas from "./components/Rentas/Rentas";
 import NuevaRenta from "./components/NuevaRenta/NuevaRenta";
+import ActualizarRenta from "./components/ActualizarRenta/ActualizarRenta";
 import Home from './components/Home/Home'
 import {useUsuarios} from './hooks/useUsuarios'
 import {usePeliculas} from './hooks/usePeliculas'
@@ -46,6 +47,9 @@ function App() {
                            element={<Rentas rentas={rentas} onActualizarRenta={actualizarRenta}/>} />
                     <Route path="/rentas/agregar"
                            element={<NuevaRenta onAgregarRenta={agregarRenta} />} />
+                    <Route path="/rentas/actualizar/:id"
+                           element={<ActualizarRenta rentas={rentas}
+                                                        onActualizarRenta={actualizarRenta} />} />
                 </Routes>
             </div>
         </Router>
