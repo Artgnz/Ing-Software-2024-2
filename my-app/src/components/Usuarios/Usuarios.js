@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Usuario from "./Usuario/Usuario"
-import { Link, useNavigate } from 'react-router-dom';
+import Usuario from "./Usuario/Usuario";
+import { Link } from 'react-router-dom';
 
-const Usuarios = ({usuarios, onEliminarUsuario, onActualizarUsuario}) => {
+const Usuarios = ({ usuarios, onEliminarUsuario, onActualizarUsuario }) => {
     return (
         <div>
             <h1>A continuación se muestran los usuarios</h1>
