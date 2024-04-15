@@ -8,3 +8,14 @@ Repositorio oficial de la materia de Ingenieria de Software de la Facultad de Ci
 - Fernando Fong
 - Erick Martínez Piza
 - Adriana Hernandez Gasca
+
+## Cómo ejecutar
+
+En el directorio my-app ejecutar:
+```
+npm install
+```
+Posteriormente, ejecutar
+```
+npm start
+```
