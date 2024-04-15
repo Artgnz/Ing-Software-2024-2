@@ -8,7 +8,8 @@ const RentaForm = (props) => {
         idUsuario: 1,
         idPelicula: 1,
         fechaRenta: '',
-        diasDeRenta: 1
+        diasDeRenta: 1,
+        estatus:false
     });
     const cambioAtributoHandler = (evento) => {
         const { name, value, type, checked } = evento.target;
@@ -72,6 +73,16 @@ const RentaForm = (props) => {
                         value={nuevaRenta.diasDeRenta}
                         onChange={cambioAtributoHandler}
                         min="1"
+                    />
+                </label>
+                <br />
+                <label>
+                    Estatus:
+                    <input
+                        type="checkbox"
+                        name="estatus"
+                        value={nuevaRenta.estatus}
+                        onChange={cambioAtributoHandler}
                     />
                 </label>
                 <br />

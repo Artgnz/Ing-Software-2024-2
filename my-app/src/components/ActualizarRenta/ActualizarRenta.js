@@ -69,8 +69,18 @@ const ActualizarRenta = ({ rentas, onActualizarRenta }) => {
                     />
                 </label>
                 <br />
-                <button type="submit" className="boton">Guardar Usuario</button>
-                <Link to="/usuarios">
+                <label>
+                    Estatus:
+                    <input
+                        type="checkbox"
+                        name="estatus"
+                        value={rentaActualizada.estatus}
+                        onChange={cambioAtributoHandler}
+                    />
+                </label>
+                <br />
+                <button type="submit" className="boton">Guardar Renta</button>
+                <Link to="/rentas">
                     <button className="eliminar-boton">Cancelar</button>
                 </Link>
             </form>

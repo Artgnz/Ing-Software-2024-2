@@ -15,6 +15,7 @@ const Renta = ({renta, onActualizarRenta}) => {
             <strong>ID Película:</strong> {renta.idPelicula}<br/>
             <strong>Fecha de renta:</strong> {renta.fechaRenta}<br/>
             <strong>Dias de renta:</strong> {renta.diasDeRenta}<br/>
+            <strong>Estatus:</strong> {renta.estatus ? "Devuelta" : "No devuelta"}<br/>
             <button className="actualizar-boton" onClick={() => handleActualizarClick(renta.id)}>
                 Actualizar
             </button>
