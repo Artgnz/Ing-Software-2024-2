@@ -1,4 +1,4 @@
-.nav-container {
+.nav-contenedor {
     background-color: #333;
     color: white;
     padding: 20px;
@@ -8,7 +8,7 @@
     height: 100vh;
 }
 
-.nav-container ul {
+.nav-contenedor ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -17,17 +17,17 @@
     align-items: center;
 }
 
-.nav-container ul li {
+.nav-contenedor ul li {
     margin-bottom: 20px;
 }
 
-.nav-container ul li a {
+.nav-contenedor ul li a {
     color: white;
     text-decoration: none;
     padding: 10px;
     font-size: 26px;
 }
 
-.nav-container ul li a:hover {
+.nav-contenedor ul li a:hover {
     background-color: #555;
 }

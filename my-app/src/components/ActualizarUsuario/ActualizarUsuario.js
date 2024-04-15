@@ -26,9 +26,9 @@ const ActualizarUsuario = ({ usuarios, onActualizarUsuario }) => {
 
     return (
         <div>
-            <div className="container">
+            <div className="contenedor">
                 <h1>Actualizar Usuario</h1>
-                <form onSubmit={submitHandler} className="form-container">
+                <form onSubmit={submitHandler} className="form-contenedor">
                     <div>
                         <label htmlFor="nombre">Nombre:</label>
                         <input

@@ -28,9 +28,9 @@ const RentaForm = (props) => {
         navigate('/rentas');
     };
     return (
-        <div className="container">
+        <div className="contenedor">
             <h1>Agregar Nueva Renta</h1> 
-            <form onSubmit={submitHandler} className="form-container">
+            <form onSubmit={submitHandler} className="form-contenedor">
                 <label>
                     ID de Usuario:
                     <input

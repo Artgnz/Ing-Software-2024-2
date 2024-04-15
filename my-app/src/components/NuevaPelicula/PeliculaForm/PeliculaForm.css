@@ -2,7 +2,7 @@ body {
     background-color: #555;
 }
 
-.container {
+.contenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-.form-container {
+.form-contenedor {
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 30px;

@@ -30,9 +30,9 @@ const PeliculaForm = (props) => {
         navigate('/peliculas');
     };
     return (
-        <div className="container">
+        <div className="contenedor">
             <h1>Agregar nueva película</h1>
-            <form onSubmit={submitHandler} className="form-container">
+            <form onSubmit={submitHandler} className="form-contenedor">
                 <label>
                     Nombre:
                     <input

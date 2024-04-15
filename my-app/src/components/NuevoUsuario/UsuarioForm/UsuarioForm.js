@@ -32,9 +32,9 @@ const UsuarioForm = (props) => {
         navigate('/usuarios');
     };
     return (
-        <div className="container">
+        <div className="contenedor">
             <h1>Agregar Nuevo Usuario</h1> 
-            <form onSubmit={submitHandler} className="form-container">
+            <form onSubmit={submitHandler} className="form-contenedor">
                 <label>
                     Nombre:
                     <input

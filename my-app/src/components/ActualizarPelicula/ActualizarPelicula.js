@@ -24,9 +24,9 @@ const ActualizarPelicula = ({ peliculas, onActualizarPelicula }) => {
     };
 
     return (
-        <div className="container">
+        <div className="contenedor">
             <h1>Actualizar Pelicula</h1>
-            <form onSubmit={submitHandler} className="form-container">
+            <form onSubmit={submitHandler} className="form-contenedor">
                 <label>
                     Nombre:
                     <input

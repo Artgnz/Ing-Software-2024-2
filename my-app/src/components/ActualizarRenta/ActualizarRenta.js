@@ -22,9 +22,9 @@ const ActualizarRenta = ({ rentas, onActualizarRenta }) => {
     };
 
     return (
-        <div className="container">
+        <div className="contenedor">
             <h1>Actualizar Renta</h1>
-            <form onSubmit={submitHandler} className="form-container">
+            <form onSubmit={submitHandler} className="form-contenedor">
                 <label>
                     ID de Usuario:
                     <input
