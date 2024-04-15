@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 const ActualizarRenta = ({ rentas, onActualizarRenta }) => {
     const { id } = useParams();
@@ -22,8 +22,9 @@ const ActualizarRenta = ({ rentas, onActualizarRenta }) => {
     };
 
     return (
-        <div>
-            <form onSubmit={submitHandler}>
+        <div className="container">
+            <h1>Actualizar Renta</h1>
+            <form onSubmit={submitHandler} className="form-container">
                 <label>
                     ID de Usuario:
                     <input
@@ -68,7 +69,10 @@ const ActualizarRenta = ({ rentas, onActualizarRenta }) => {
                     />
                 </label>
                 <br />
-                <button type="submit">Guardar Renta</button>
+                <button type="submit" className="boton">Guardar Usuario</button>
+                <Link to="/usuarios">
+                    <button className="eliminar-boton">Cancelar</button>
+                </Link>
             </form>
         </div>
     );

@@ -1,5 +1,7 @@
 import React, { useState} from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+
+import './ActualizarPelicula.css';
 
 const ActualizarPelicula = ({ peliculas, onActualizarPelicula }) => {
     const { id } = useParams();
@@ -22,8 +24,9 @@ const ActualizarPelicula = ({ peliculas, onActualizarPelicula }) => {
     };
 
     return (
-        <div>
-            <form onSubmit={submitHandler}>
+        <div className="container">
+            <h1>Actualizar Pelicula</h1>
+            <form onSubmit={submitHandler} className="form-container">
                 <label>
                     Nombre:
                     <input
@@ -66,7 +69,10 @@ const ActualizarPelicula = ({ peliculas, onActualizarPelicula }) => {
                     />
                 </label>
                 <br />
-                <button type="submit">Guardar Pelicula</button>
+                <button type="submit" className="boton">Guardar Película</button>
+                <Link to="/peliculas">
+                    <button className="eliminar-boton">Cancelar</button>
+                </Link>
             </form>
         </div>
     );

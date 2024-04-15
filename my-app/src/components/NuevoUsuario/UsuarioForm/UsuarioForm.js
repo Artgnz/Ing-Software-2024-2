@@ -1,5 +1,7 @@
 import React, { useState } from "react"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
+import './UsuarioForm.css'
 
 const UsuarioForm = (props) => {
     const navigate = useNavigate();
@@ -30,8 +32,9 @@ const UsuarioForm = (props) => {
         navigate('/usuarios');
     };
     return (
-        <div>
-            <form onSubmit={submitHandler}>
+        <div className="container">
+            <h1>Agregar Nuevo Usuario</h1> 
+            <form onSubmit={submitHandler} className="form-container">
                 <label>
                     Nombre:
                     <input
@@ -92,7 +95,10 @@ const UsuarioForm = (props) => {
                     />
                 </label>
                 <br />
-                <button type="submit">Guardar Usuario</button>
+                <button type="submit" className="boton">Guardar Usuario</button>
+                <Link to="/usuarios">
+                    <button className="eliminar-boton">Cancelar</button>
+                </Link>
             </form>
         </div>
     );

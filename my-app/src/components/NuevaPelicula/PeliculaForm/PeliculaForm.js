@@ -1,5 +1,7 @@
 import React, { useState } from "react"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
+import './PeliculaForm.css';
 
 const PeliculaForm = (props) => {
     const navigate = useNavigate();
@@ -28,8 +30,9 @@ const PeliculaForm = (props) => {
         navigate('/peliculas');
     };
     return (
-        <div>
-            <form onSubmit={submitHandler}>
+        <div className="container">
+            <h1>Agregar nueva película</h1>
+            <form onSubmit={submitHandler} className="form-container">
                 <label>
                     Nombre:
                     <input
@@ -72,7 +75,10 @@ const PeliculaForm = (props) => {
                     />
                 </label>
                 <br />
-                <button type="submit">Guardar Pelicula</button>
+                <button type="submit" className="boton">Guardar Película</button>
+                <Link to="/peliculas">
+                    <button className="eliminar-boton">Cancelar</button>
+                </Link>
             </form>
         </div>
     );

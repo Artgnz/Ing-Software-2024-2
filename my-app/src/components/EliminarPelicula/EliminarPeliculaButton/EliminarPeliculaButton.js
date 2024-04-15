@@ -8,7 +8,7 @@ const EliminarPeliculaButton = ({ pelicula, onEliminarPelicula }) => {
     };
 
     return (
-        <button onClick={eliminarPeliculaHandler}>
+        <button className="eliminar-boton" onClick={eliminarPeliculaHandler}>
             Eliminar
         </button>
     );

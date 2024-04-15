@@ -1,0 +1,27 @@
+.pelicula-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.actualizar-boton {
+    background-color: #666;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.actualizar-boton:hover {
+    background-color: #444;
+}
+
+.actualizar-boton strong {
+    font-weight: bold;
+}

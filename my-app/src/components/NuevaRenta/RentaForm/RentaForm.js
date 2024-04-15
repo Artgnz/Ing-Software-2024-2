@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const RentaForm = (props) => {
     const navigate = useNavigate();
@@ -28,8 +28,9 @@ const RentaForm = (props) => {
         navigate('/rentas');
     };
     return (
-        <div>
-            <form onSubmit={submitHandler}>
+        <div className="container">
+            <h1>Agregar Nueva Renta</h1> 
+            <form onSubmit={submitHandler} className="form-container">
                 <label>
                     ID de Usuario:
                     <input
@@ -74,7 +75,10 @@ const RentaForm = (props) => {
                     />
                 </label>
                 <br />
-                <button type="submit">Guardar Renta</button>
+                <button type="submit" className="boton">Guardar Usuario</button>
+                <Link to="/rentas">
+                    <button className="eliminar-boton">Cancelar</button>
+                </Link>
             </form>
         </div>
     );

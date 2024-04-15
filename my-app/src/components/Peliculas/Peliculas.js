@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Pelicula from "./Pelicula/Pelicula";
-
 import { Link } from 'react-router-dom';
+
+import Pelicula from "./Pelicula/Pelicula";
+import './Peliculas.css'
 
 const Peliculas = ({ peliculas, onEliminarPelicula, onActualizarPelicula}) => {
     return (
-        <div>
+        <div className="lista-contenedor">
             <h1>A continuación se muestran las películas</h1>
             <ul>
                 {peliculas.map(pelicula => (
@@ -13,10 +14,10 @@ const Peliculas = ({ peliculas, onEliminarPelicula, onActualizarPelicula}) => {
                 ))}
             </ul>
             <Link to="./agregar">
-                <button>Agregar Pelicula</button>
+                <button className="boton">Agregar Pelicula</button>
             </Link>
             <Link to="/">
-                <button>Volver a inicio</button>
+                <button className="boton">Volver a inicio</button>
             </Link>
         </div>
     );    

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './EliminarUsuarioButton.css';
+
 const EliminarUsuarioButton = ({ usuario, onEliminarUsuario }) => {
     const eliminarUsuarioHandler = () => {
         if (window.confirm(`¿Estás seguro de eliminar al usuario ${usuario.nombre} ${usuario.apPat} ${usuario.apMat}?`)) {
@@ -8,7 +10,7 @@ const EliminarUsuarioButton = ({ usuario, onEliminarUsuario }) => {
     };
 
     return (
-        <button onClick={eliminarUsuarioHandler}>
+        <button className="eliminar-boton" onClick={eliminarUsuarioHandler}>
             Eliminar
         </button>
     );
