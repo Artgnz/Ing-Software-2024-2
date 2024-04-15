@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Renta from "./Renta/Renta";
 import { Link } from 'react-router-dom';
 

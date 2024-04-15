@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Usuario from "./Usuario/Usuario";
 import { Link } from 'react-router-dom';
 
